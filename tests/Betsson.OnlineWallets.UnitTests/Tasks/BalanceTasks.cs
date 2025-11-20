@@ -1,6 +1,7 @@
 ﻿using Betsson.OnlineWallets.Data.Models;
 using Betsson.OnlineWallets.Data.Repositories;
 using Betsson.OnlineWallets.Services;
+using Betsson.OnlineWallets.Models;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Betsson.OnlineWallets.UnitTests.Tasks
 {
     public class BalanceTasks
     {
-        internal static async Task<Models.Balance> GetBalanceAsync(Mock<IOnlineWalletRepository> repositoryMock, OnlineWalletService service)
+        internal static async Task<Balance> GetBalanceAsync(Mock<IOnlineWalletRepository> repositoryMock, OnlineWalletService service)
         {
             repositoryMock
             .Setup(r => r.GetLastOnlineWalletEntryAsync())

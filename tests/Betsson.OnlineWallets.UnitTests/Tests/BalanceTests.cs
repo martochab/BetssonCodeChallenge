@@ -12,17 +12,17 @@ namespace Betsson.OnlineWallets.UnitTests.Tests
         [Test]
         public async Task T001GetBalanceAsyncShouldReturnZeroWhenNoEntriesExist()
         {
-            var response = await BalanceTasks.GetBalanceAsync(_repositoryMock, _service);
+            var result = await BalanceTasks.GetBalanceAsync(_repositoryMock, _service);
 
-            Assert.That(response.Amount, Is.EqualTo(0));
+            Assert.That(result.Amount, Is.EqualTo(0));
         }
 
         [Test]
         public async Task T002GetBalanceAsyncShouldReturnBalanceComputedCorrectly()
         {
-            var response = await BalanceTasks.GetBalanceWithEntriesAsync(_repositoryMock, _service, 50, 100);
+            var result = await BalanceTasks.GetBalanceWithEntriesAsync(_repositoryMock, _service, 50, 100);
 
-            Assert.That(response.Amount, Is.EqualTo(150));
+            Assert.That(result.Amount, Is.EqualTo(150));
         }
     }
 }
