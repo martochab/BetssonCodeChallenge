@@ -21,7 +21,7 @@ namespace Betsson.OnlineWallets.UnitTests.Tests
 
             Assert.That(result.Amount, Is.EqualTo(150));
 
-            DepositTasks.VerifyInsertOnlineWalletEntry(_repositoryMock, 50, 100);
+            GeneralTasks.VerifyInsertOnlineWalletEntry(_repositoryMock, 50, 100);
         }
     }
 }

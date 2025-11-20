@@ -27,15 +27,5 @@ namespace Betsson.OnlineWallets.UnitTests.Tasks
 
             return result;
         }
-
-        internal static void VerifyInsertOnlineWalletEntry(Mock<IOnlineWalletRepository> repositoryMock, decimal amount, decimal balanceBefore)
-        {
-            repositoryMock.Verify(r =>
-                    r.InsertOnlineWalletEntryAsync(
-                        It.Is<OnlineWalletEntry>(e =>
-                            e.Amount == amount &&
-                            e.BalanceBefore == balanceBefore)),
-                    Times.Once);
-        }
     }
 }
